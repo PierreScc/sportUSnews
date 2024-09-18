@@ -24,6 +24,19 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def nba
+    @articles = Article.where(league: "NBA")
+  end
+
+  def nfl
+    @articles = Article.where(league: "NFL")
+  end
+
+  def mlb
+    @articles = Article.where(league: "MLB")
+  end
+
+
   private
 
   def article_params

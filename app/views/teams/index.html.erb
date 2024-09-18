@@ -1,0 +1,20 @@
+<h1>Classement des équipes de <%= params[:league].upcase %></h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Équipe</th>
+      <th>Victoires</th>
+      <th>Défaites</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.wins %></td>
+        <td><%= team.losses %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

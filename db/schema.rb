@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_09_17_163551) do
+ActiveRecord::Schema[7.2].define(version: 2024_09_18_161705) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_163551) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
+    t.string "image_url"
     t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
@@ -33,6 +34,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_17_163551) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "league"
+    t.integer "wins"
+    t.integer "losses"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "articles", "categories"
